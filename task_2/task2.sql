@@ -1,0 +1,16 @@
+
+SELECT 
+MONTHNAME(concat(year(CURTIME()),'-0', MONTH ,'-01')) AS month,  
+DAY(LAST_DAY(concat(year(CURTIME()),'-0', MONTH ,'-01'))) AS days 
+FROM (SELECT 1 AS month 
+UNION SELECT 2 AS month
+UNION SELECT 3 AS month
+UNION SELECT 4 AS month
+UNION SELECT 5 AS month
+UNION SELECT 6 AS month
+UNION SELECT 7 AS month
+UNION SELECT 8 AS month
+UNION SELECT 9 AS month
+UNION SELECT 10 AS month
+UNION SELECT 11 AS month
+UNION SELECT 12 AS month) AS days_by_months
